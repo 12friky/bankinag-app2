@@ -53,6 +53,22 @@
     font-size: 1em;
   }
   
+  .input-with-icon {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    color: #666;
+  }
+  
+  .input-with-icon input {
+    padding-left: 40px; /* Adjust the padding to make room for the icon */
+  }
+  
   .login-button {
     width: 100%;
     padding: 10px;

@@ -1,6 +1,8 @@
 import React from 'react';
+import { FaUser, FaLock } from 'react-icons/fa';
 import './Login.css';
 import Logo from '../../../../reaoure/lo.jpeg'; // Ensure the image path is correct
+
 
 const Login = () => {
   return (
@@ -11,11 +13,17 @@ const Login = () => {
         <form>
           <div className="input-group">
             <label>Username</label>
-            <input type="text" placeholder="Username" />
+            <div className="input-with-icon">
+              <FaUser className="input-icon" />
+              <input type="text" placeholder="Username" />
+            </div>
           </div>
           <div className="input-group">
             <label>Single Sign-On Password</label>
-            <input type="password" placeholder="Password" />
+            <div className="input-with-icon">
+              <FaLock className="input-icon" />
+              <input type="password" placeholder="Password" />
+            </div>
           </div>
           <button type="submit" className="login-button">Log in</button>
           <div className="single-sign-on">
