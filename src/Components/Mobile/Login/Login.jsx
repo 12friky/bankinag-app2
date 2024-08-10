@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../Components/Mobile/Login/login.css'; // Ensure the CSS file path is correct
+import './Login.css';
 import Logo from '../../../../reaoure/lo.jpeg'; // Ensure the image path is correct
 
 const Login = () => {
