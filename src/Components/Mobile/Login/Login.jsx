@@ -9,27 +9,33 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(''); // State for error message
+  const [loading, setLoading] = useState(false); // State for loading
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevent default form submission
+    setLoading(true); // Set loading to true
 
     // Fake credentials
     const validUsername = 'admin';
     const validPassword = 'admin';
 
-    // Check credentials
-    if (username === validUsername && password === validPassword) {
-      // Redirect to the dashboard
-      navigate('/dashboard'); // Change '/dashboard' to your actual dashboard route
-    } else {
-      // Set error message
-      setError('Invalid credentials. Please try again.');
+    // Simulate an asynchronous verification process
+    setTimeout(() => {
+      // Check credentials
+      if (username === validUsername && password === validPassword) {
+        // Redirect to the dashboard
+        navigate('/dashboard'); // Change '/dashboard' to your actual dashboard route
+      } else {
+        // Set error message
+        setError('Invalid credentials. Please try again.');
 
-      // Clear error message after 10 seconds
-      setTimeout(() => {
-        setError('');
-      }, 5000); // 10 seconds
-    }
+        // Clear error message after 10 seconds
+        setTimeout(() => {
+          setError('');
+        }, 10000); // 10 seconds
+      }
+      setLoading(false); // Set loading to false after verification
+    }, 2000); // Simulate a 2-second delay for verification
   };
 
   return (
@@ -65,7 +71,13 @@ const Login = () => {
               />
             </div>
           </div>
-          <button type="submit" className="login-button">Log in</button>
+          <button type="submit" className="login-button" disabled={loading}>
+            {loading ? (
+              <span className="loading-spinner"></span> // Loading spinner
+            ) : (
+              'Log in'
+            )}
+          </button>
           <div className="single-sign-on">
             <input type="checkbox" id="singleSignOn" />
             <label htmlFor="singleSignOn">Single Sign-on</label>
