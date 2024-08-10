@@ -1,10 +1,14 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Login from './Components/Mobile/Login/Login'; 
+
 const MobileComponent = () => {
   return (
-    <div>
-      <Login />
-    </div>
+    <Router>
+      <div>
+        <Login />
+      </div>
+    </Router>
   );
 };
 

@@ -1,18 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import MobileComponent from './MobileComponent';
-import PromptMessage from './PromptMessage';
+import AppRouter from './AppRouter'; // Import your AppRouter
 
 const App = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobileDevice = () => {
-      const isSmallScreen = window.innerWidth <= 400;
-      setIsMobile(isSmallScreen);
+      setIsMobile(window.innerWidth <= 400);
     };
 
     checkMobileDevice(); // Check on mount
-
     window.addEventListener('resize', checkMobileDevice); // Check on resize
 
     return () => {
@@ -22,7 +19,7 @@ const App = () => {
 
   return (
     <div>
-      {isMobile ? <MobileComponent /> : <PromptMessage />}
+      <AppRouter /> {/* Render the router */}
     </div>
   );
 };
