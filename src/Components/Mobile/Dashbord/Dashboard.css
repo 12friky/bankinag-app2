@@ -1,0 +1,160 @@
+.dashboardContainer {
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: #0a1e62;
+    padding: 1rem;
+    padding-bottom: 5rem; /* Adjusted for fixed bottom navigation */
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.languageSection {
+    display: flex;
+    align-items: center;
+}
+
+.selectedLanguage {
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.flagIcon {
+    width: 40px;
+    height: 40px;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+}
+
+.profileSection {
+    position: relative;
+}
+
+.profileIcon {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+}
+
+.notificationBadge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 0.25rem;
+    font-size: 12px;
+}
+
+.balanceSection {
+    background-color: #09336b;
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.AccountType {
+    margin-left: -70%;
+    margin-top: -4%;
+    color: rgb(186, 181, 181);
+}
+
+.balance {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.creditDebitInfo {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.actionsGrid {
+    background-color: white;
+    border-radius: 15px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.actionItem {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 19px;
+}
+
+.actionIcon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background-color: #0a1e62;
+    padding: 17px;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+.actionDivider {
+    grid-column: span 3;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 0.5rem 0;
+}
+
+.bottomNavigation {
+    display: flex;
+    justify-content: space-around;
+    background-color:#09336b;
+    /* border-radius: 10px; */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+.navIcon {
+    font-size: 2.1rem;
+    color: #ffffff;
+}
+
+.chatButton {
+    position: fixed;
+    bottom: 80px; /* Adjust as necessary */
+    right: 20px; /* Adjust as necessary */
+    background-color: #ff4500; /* Dark orange color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it is above other elements */
+}
+
+.chatIcon {
+    font-size: 28px;
+    color: white;
+}
