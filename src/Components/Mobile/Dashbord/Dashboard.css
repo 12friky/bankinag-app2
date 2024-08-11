@@ -86,8 +86,8 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    /* margin-left: -1rem;
+    margin-right: -1rem; */
 }
 
 .actionItem {
