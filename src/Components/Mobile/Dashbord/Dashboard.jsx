@@ -38,12 +38,12 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
 
       {/* Balance Section */}
       <div className="balanceSection">
-        <h2 className='AccountType'>Savings</h2>
-        <h1 className="balance">$7,000,000.00</h1>
+        <h2 className='AccountType'>Current Balance</h2>
+        <h1 className="balance">$700,200.00</h1>
         <p>Account Number: •••• 1187</p>
         <div className="creditDebitInfo">
-          <p>Total Credit <br></br> (JUL 2024): $0.00</p>
-          <p>Total Debit <br></br>(JUL 2024): $0.00</p>
+          <p>Credit Card Balance <br></br> (JUL 2024): $22,874.43</p>
+          <p>Total Debit <br></br>(JUL 2024): $723074.00</p>
         </div>
       </div>
 
