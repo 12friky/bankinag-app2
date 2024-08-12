@@ -51,7 +51,7 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
       <div className="actionsGrid">
         <div className="actionItem">
           <FaExchangeAlt className="actionIcon" />
-          <p>Wire Transfer</p>
+          <p>Wire <br/> Transfer</p>
         </div>
         <div className="actionItem">
           <FaExchangeAlt className="actionIcon" />
@@ -64,7 +64,7 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
         <hr className="actionDivider" />
         <div className="actionItem">
           <FaBitcoin className="actionIcon" />
-          <p>Buy Crypto</p>
+          <p>Buy <br/> Crypto</p>
         </div>
         <div className="actionItem">
           <FaMoneyCheckAlt className="actionIcon" />
@@ -77,7 +77,7 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
         <hr className="actionDivider" />
         <div className="actionItem">
           <FaCreditCard className="actionIcon" />
-          <p>Card Deposit</p>
+          <p>Card <br/> Deposit</p>
         </div>
         <div className="actionItem">
           <FaMoneyBillWave className="actionIcon" />

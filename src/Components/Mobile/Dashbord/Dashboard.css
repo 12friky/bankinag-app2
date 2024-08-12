@@ -58,7 +58,7 @@
 
 .balanceSection {
     /* background-color: #09336b; */
-    background-image: linear-gradient(to right, #09336b, #1b4f8a);
+    background-image: linear-gradient(to right, #09336b, #13457f);
     padding: 1rem;
     border-radius: 10px;
     margin-bottom: 2rem;
@@ -71,7 +71,7 @@
 }
 
 .balance {
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin: 0.5rem 0;
 }
 
@@ -84,10 +84,10 @@
 .actionsGrid {
     background-color: white;
     border-radius: 15px;
-    padding: 1rem;
+    padding: 0.7rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0.5rem;
+    gap: 0.1rem;
     /* margin-left: -1rem;
     margin-right: -1rem; */
 }
