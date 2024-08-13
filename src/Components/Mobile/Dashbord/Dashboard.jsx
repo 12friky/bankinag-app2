@@ -2,15 +2,17 @@ import React, { useState } from 'react'; // Import useState for managing state
 import './Dashboard.css';
 import Logo from '../../../../reaoure/lo.jpeg';
 import { FaExchangeAlt, FaBitcoin, FaMoneyCheckAlt, FaUserPlus, FaCreditCard, FaMoneyBillWave, FaHome, FaBell, FaUserCircle, FaCogs, FaComments } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 // Corrected 'reaoure' to 'resource'
 import Flag from '../../../../reaoure/flag.png';
 import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' to 'resource'
- // Corrected 'reaoure' to 'resource'
+ 
 
  
- const Dashboard = () => {
+const Dashboard = () => {
   const [selectedOption, setSelectedOption] = useState('');
+  const navigate = useNavigate(); // Hook to navigate programmatically
 
   const handleChange = (event) => {
     setSelectedOption(event.target.value);
@@ -21,6 +23,10 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
     // You can replace the alert with your chat function or a redirect to the chat page
   };
 
+  const handleNotificationClick = () => {
+    navigate('/notifications'); // Redirect to the notification page
+  };
+
   return (
     <div className="dashboardContainer">
       {/* Top Bar */}
@@ -29,10 +35,9 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
           <img src={Flag} alt="Language Flag" className="flagIcon" />
           <p className="selectedLanguage">English</p>
         </div>
-        {/* <img src={Logo} alt="Logo" className="logo" /> */}
         <div className="profileSection">
           <img src={Profile} alt="Profile" className="profileIcon" />
-          <div className="notificationBadge">0</div>
+          <div className="notificationBadge" onClick={handleNotificationClick}>0</div>
         </div>
       </div>
 
@@ -97,7 +102,7 @@ import Profile from '../../../../reaoure/profile.jfif'; // Corrected 'reaoure' t
       {/* Bottom Navigation */}
       <div className="bottomNavigation">
         <FaHome className="navIcon" />
-        <FaBell className="navIcon" />
+        <FaBell className="navIcon" onClick={handleNotificationClick} /> {/* Add onClick event */}
         <FaUserCircle className="navIcon" />
         <FaCogs className="navIcon" />
       </div>
