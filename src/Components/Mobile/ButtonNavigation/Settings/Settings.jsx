@@ -17,7 +17,7 @@ const Settings = () => {
       <div className="profile-section">
         <img src={UserProfile} alt="User Profile" className="profile-image" />
         <div className="profile-info">
-          <h2>David Robinson</h2>
+          <h2>Rose</h2>
           {/* <p className="joined-info">Joined 1 year ago</p> */}
         </div>
       </div>
