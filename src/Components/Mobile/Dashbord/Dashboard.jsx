@@ -1,5 +1,6 @@
 import React, { useState } from 'react'; // Import useState for managing state
 import './Dashboard.css';
+import NavComponent from '../NavComponent/NavComponent';
 import Logo from '../../../../reaoure/lo.jpeg';
 import { FaExchangeAlt, FaBitcoin, FaMoneyCheckAlt, FaUserPlus, FaCreditCard, FaMoneyBillWave, FaHome, FaBell, FaUserCircle, FaCogs, FaComments } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
@@ -27,6 +28,10 @@ const Dashboard = () => {
     navigate('/notifications'); // Redirect to the notification page
   };
 
+  const handleSettingsClick = () => {
+    navigate('/settings'); 
+  };
+
   return (
     <div className="dashboardContainer">
       {/* Top Bar */}
@@ -44,11 +49,11 @@ const Dashboard = () => {
       {/* Balance Section */}
       <div className="balanceSection">
         <h2 className='AccountType'>Current Balance</h2>
-        <h1 className="balance">$700,200.00</h1>
-        <p>Account Number: •••• 1187</p>
+        <h1 className="balance">$80,000,000,000.00</h1>
+        <p>Account Number: •••• 1154</p>
         <div className="creditDebitInfo">
-          <p>Credit Card Balance <br></br> (JUL 2024): $22,874.43</p>
-          <p>Total Debit <br></br>(JUL 2024): $723074.00</p>
+          <p>Credit Card Balance  : $22,874.43</p>
+          <p>Total Debit $12,768.00</p>
         </div>
       </div>
 
@@ -98,14 +103,8 @@ const Dashboard = () => {
       <div className="chatButton" onClick={handleChatClick}>
         <FaComments className="chatIcon" />
       </div>
-
-      {/* Bottom Navigation */}
-      <div className="bottomNavigation">
-        <FaHome className="navIcon" />
-        <FaBell className="navIcon" onClick={handleNotificationClick} /> {/* Add onClick event */}
-        <FaUserCircle className="navIcon" />
-        <FaCogs className="navIcon" />
-      </div>
+<NavComponent/>
+     
     </div>
   );
 };
