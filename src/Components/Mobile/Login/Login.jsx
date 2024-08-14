@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaUser, FaLock } from 'react-icons/fa';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import Logo from '../../../../reaoure/lo.jpeg'; // Ensure the image path is correct
 
@@ -23,8 +23,8 @@ const Login = () => {
     setTimeout(() => {
       // Check credentials
       if (username === validUsername && password === validPassword) {
-        // Redirect to the dashboard
-        navigate('/dashboard'); // Change '/dashboard' to your actual dashboard route
+        // Redirect to the OTP page
+        navigate('/otpPage');
       } else {
         // Set error message
         setError('Invalid credentials. Please try again.');

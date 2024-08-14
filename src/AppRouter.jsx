@@ -5,14 +5,17 @@ import Notifications from './Components/Mobile/ButtonNavigation/Notification/Not
 import Settings from './Components/Mobile/ButtonNavigation/Settings/Settings'
 import Dashboard from './Components/Mobile/Dashbord/Dashboard'; 
 import BellNotification from './Components/Mobile/ButtonNavigation/BellNotification/BellNotification';
+import OtpPage from './Components/Mobile/OtpPage/OtpPage';
 
 const AppRouter = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} /> {/* Use element prop for React Router v6 */}
-        <Route path="/dashboard" element={<Dashboard />} /> {/* Use element prop for React Router v6 */}
-        <Route path="/notifications" element={<Notifications />} /> {/* Add route for notifications */}
+        
+        <Route path="/" element={<Login />} /> 
+        <Route path="/otpPage" element={<OtpPage />} /> 
+        <Route path="/dashboard" element={<Dashboard />} /> 
+        <Route path="/notifications" element={<Notifications />} /> 
         <Route path="/settings" element={<Settings />} />
         <Route path="/bell" element={<BellNotification/>} />
 
