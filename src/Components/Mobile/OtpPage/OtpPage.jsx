@@ -10,7 +10,7 @@ const OtpPage = () => {
     const navigate = useNavigate();  
 
    
-    const email = 'francisngumah369@gmail.com';
+    const email = 'godwinarizi313@gmail.com';
     const name = 'Rose';
 
     const generateOtp = () => {
