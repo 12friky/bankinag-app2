@@ -1,17 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { MdOutlineLock } from 'react-icons/md';
-import { useNavigate } from 'react-router-dom';  
-import emailjs from 'emailjs-com';
+import { useNavigate, useLocation } from 'react-router-dom';  
+import emailjs from 'emailjs-com'; // Import EmailJS
 import './OtpPage.css';
 
 const OtpPage = () => {
     const [otp, setOtp] = useState('');
     const [loading, setLoading] = useState(false);
-    const navigate = useNavigate();  
+    const navigate = useNavigate();
+    const location = useLocation();
 
-   
-    const email = 'godwinarizi313@gmail.com';
-    const name = 'Rose';
+    // Retrieve email from location state
+    const email = location.state?.email;
+
+    // Log the email address to the console
+    useEffect(() => {
+        if (email) {
+            console.log('Email received on OTP page:', email);
+            sendOtp(); // Send OTP when the component mounts
+        } else {
+            console.log('No email received');
+        }
+    }, [email]);
 
     const generateOtp = () => {
         const otp = Math.floor(100000 + Math.random() * 900000).toString();
@@ -19,50 +29,46 @@ const OtpPage = () => {
         return otp;
     };
 
-    const sendOtp = () => {
-        const otp = generateOtp();
+    const sendOtp = async () => {
+        if (loading || !email) {
+            console.log('Cannot send OTP: Loading or email not available');
+            return;
+        }
 
+        const otp = generateOtp();
         const templateParams = {
             to_email: email,
             otp_code: otp,
-            to_name: name,  
         };
 
-        emailjs.send(
-            'service_o0zqi3x',
-            'template_blt7w1z',
-            templateParams,
-            'Jx-86x90R1cKbBlLe'
-        ).then((response) => {
-            console.log('OTP sent!', response.status, response.text);
-        }).catch((error) => {
+        try {
+            console.log('Sending OTP to:', email);
+            const response = await emailjs.send('service_q6l16vx', 'template_hx376pg', templateParams, '8tcICjeh46aJKasHO');
+            console.log('OTP sent successfully:', response);
+        } catch (error) {
             console.error('Failed to send OTP:', error);
-        });
+            alert('Failed to send OTP. Please try again.');
+        }
     };
 
     const handleOtpChange = (e) => {
         setOtp(e.target.value);
     };
 
-    const handleVerify = (e) => {
+    const handleVerify = async (e) => {
         e.preventDefault();
         setLoading(true);
 
-        setTimeout(() => {
-            setLoading(false);
-            const storedOtp = sessionStorage.getItem('otp');
-            if (otp === storedOtp) {
-                alert('OTP Verified Successfully!');
-                navigate('/dashboard');  // Navigate to the dashboard
-            } else {
-                alert('Incorrect OTP, please try again.');
-            }
-        }, 5000);
-    };
+        const storedOtp = sessionStorage.getItem('otp');
+        if (otp === storedOtp) {
+            alert('OTP Verified Successfully!');
+            navigate('/dashboard'); // Navigate to the dashboard
+        } else {
+            alert('Incorrect OTP, please try again.');
+        }
 
-    useEffect(() => {
-        sendOtp();
-    }, []); // Send OTP when the component mounts
+        setLoading(false);
+    };
 
     return (
         <div className="otp-page">

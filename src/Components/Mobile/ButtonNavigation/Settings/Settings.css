@@ -1,77 +1,100 @@
 .settings-container {
-    padding: 20px;
-    background-color: #fff;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  .profile-section {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile-image {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-right: 15px;
-  }
-  
-  .profile-info {
-    flex: 1;
-  }
-  
-  .profile-info h2 {
-    font-size: 24px;
-    margin: 0;
-  }
-  
-  .joined-info {
-    color: #888;
-    font-size: 14px;
-  }
-  
-  .settings-section {
-    margin-top: 30px;
-  }
-  
-  .settings-group, .profile-settings, .support-section {
-    margin-bottom: 20px;
-  }
-  
-  .settings-group h3, .profile-settings h3, .support-section h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .setting-item {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px 0;
-    border-bottom: 1px solid #ddd;
-    font-size: 16px;
-  }
-  
-  .signout-section {
-    text-align: center;
-    margin-top: 30px;
-  }
-  
-  .signout-button {
-    background-color:#09336b;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 7px;
-    font-size: 16px;
-    cursor: pointer;
-    width: 10rem;
-    margin-bottom: 5rem;
-  }
-  
-  .signout-button:hover {
-    background-color: #0056b3;
-  }
-  
+  padding: 20px;
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.joined-info {
+  color: #888;
+  font-size: 14px;
+}
+
+.settings-section {
+  margin-top: 30px;
+}
+
+.settings-group, .profile-settings, .support-section {
+  margin-bottom: 20px;
+}
+
+.settings-group h3, .profile-settings h3, .support-section h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.setting-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 16px;
+}
+
+.signout-section {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.signout-button {
+  background-color: #09336b;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 7px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 10rem;
+  margin-bottom: 5rem;
+  position: relative; /* Needed for spinner positioning */
+}
+
+.signout-button:hover {
+  background-color: #0056b3;
+}
+
+.signout-button:disabled {
+  cursor: not-allowed;
+  background-color: #0056b3; /* Optional: Adjust color for disabled state */
+}
+
+.spinner {
+  border: 4px solid #f3f3f3; /* Light grey */
+  border-top: 4px solid #09336b; /* Blue */
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  animation: spin 1s linear infinite;
+  position: absolute; /* Positioning the spinner */
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
