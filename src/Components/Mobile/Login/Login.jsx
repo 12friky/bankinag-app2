@@ -18,22 +18,23 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-
+  
     const normalizedEmail = email.toLowerCase();
-
+  
     try {
       // Get API URL from Vite's environment variables
       const apiUrl = import.meta.env.VITE_API_URL;
-
+  
       const response = await axios.post(`${apiUrl}/api/signin`, {
         email: normalizedEmail,
         password,
       });
-      console.log('API URL:', import.meta.env.VITE_API_URL);
-
+      // ('API URL:', import.meta.env.VITE_API_URL);
+  
       if (response.data.success) {
+        // Store the user's email and navigate to the OTP page with the email
         localStorage.setItem('userEmail', normalizedEmail);
-        navigate('/dashboard');
+        navigate('/otpPage', { state: { email: normalizedEmail } }); // Pass email to the OTP page
       } else {
         setError(response.data.message || 'Invalid email or password.');
       }
@@ -44,6 +45,7 @@ const Login = () => {
       setLoading(false);
     }
   };
+  
 
   const AdminAuth = () => {
     navigate('/adminauth');

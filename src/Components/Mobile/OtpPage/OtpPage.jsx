@@ -13,13 +13,12 @@ const OtpPage = () => {
     // Retrieve email from location state
     const email = location.state?.email;
 
-    // Log the email address to the console
     useEffect(() => {
         if (email) {
-            console.log('Email received on OTP page:', email);
+            // Email received, proceed with sending OTP
             sendOtp(); // Send OTP when the component mounts
         } else {
-            console.log('No email received');
+            console.log('No email received'); // Log this for debugging if no email is present
         }
     }, [email]);
 
@@ -42,11 +41,10 @@ const OtpPage = () => {
         };
 
         try {
-            console.log('Sending OTP to:', email);
             const response = await emailjs.send('service_q6l16vx', 'template_hx376pg', templateParams, '8tcICjeh46aJKasHO');
-            console.log('OTP sent successfully:', response);
+            console.log('OTP sent successfully'); // Keeping this log for success feedback
         } catch (error) {
-            console.error('Failed to send OTP:', error);
+            console.error('Failed to send OTP:', error); // Only log error messages
             alert('Failed to send OTP. Please try again.');
         }
     };
